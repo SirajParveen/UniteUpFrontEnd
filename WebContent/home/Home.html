@@ -1,14 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-<style>
-img {
-    max-width:400%;
-    height: auto;
-}
-</style>
-
 <meta charset="ISO-8859-1">
 <title>Home Page</title>
 
@@ -32,50 +24,43 @@ img {
 <link rel="stylesheet" href="resources/user.css">
 <link rel="stylesheet" href="resources/login.css">
 <link rel="stylesheet" href="resources/comments.css">
-<!-- <script type="text/javascript" src="resources/login.js"></script>
- -->
+<script type="text/javascript" src="resources/login.js"></script>
+
 
 
 </head>
 
 <body  data-ng-app="blogapp">
 
-	       
-			
-			 <section id="home" class="text-center">
-         
-                <div id="carousel-example" class="carousel slide" data-ride="carousel">
+	    <!--------------------------------------- Carousel ----------------------------------------->
 
-                    <div class="carousel-inner">
-                        <div class="item active">
+<div id="carousel-example" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example" data-slide-to="1"></li>
+    <li data-target="#carousel-example" data-slide-to="2"></li>
+  </ol>
 
-                            <img src="resources/imgs/collaboration-at-work.jpg" alt="" />
-                            <div class="carousel-caption" >
-                                <h4 class="back-light">Focus ON COLLABORATION!!!Instead Of Competition.</h4>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <img src="resources/imgs/collaboration-at-work.jpg" alt="" />
-                            <div class="carousel-caption ">
-                                <h4 class="back-light">CREATIVE COLLABORATION IS AWESOME.</h4>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <img src="resources/imgs/collaboration-at-work.jpg" alt="" />
-                            <div class="carousel-caption ">
-                                <h4 class="back-light"> EQUALS INNOVATION.</h4>
-                            </div>
-                        </div>
-                    </div>
+  <div class="carousel-inner">
+    <div class="item active">
+      <a href="#"><img src="resources/imgs/niit.jpg"  width="1500" height="1000"/></a>
+    </div>
+    <div class="item">
+      <a href="#"><img src="resources/imgs/collaboration.jpg" width="1600"/></a>
+    </div>
+    <div class="item">
+      <a href="#"><img src="resources/imgs/team.jpg" width="1600"/></a>
+    </div>
+  </div>
 
-                    <ol class="carousel-indicators">
-                        <li data-target="#carousel-example" data-slide-to="0" class="active"></li>
-                        <li data-target="#carousel-example" data-slide-to="1"></li>
-                        <li data-target="#carousel-example" data-slide-to="2"></li>
-                    </ol>
-                </div>
-           
-       </section>
+  <a class="left carousel-control" href="#carousel-example" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
+</div>
+<!--------------------------------------- Carousel Ending  ----------------------------------------->
        		<br><br>	
 		<br><br>
   
@@ -100,17 +85,14 @@ img {
 		
 
 	        	</div>
-        </div></div></div>
+        </div></div></div></div>
 	
 	</div> 
 	</div>
-
-  
-  
-		
 		<br><br>	
 		<br><br>
-  <!--   <section id="footer-sec" >
+		<!-- <div style="color: black;">
+    <section id="footer-sec" style="color: white;">
              
             <div class="container">
            <div class="row  pad-bottom" >
@@ -143,7 +125,8 @@ img {
                 </div>
                </div>
             </div>
-    </section>          -->
+    </section>  
+    </div>        -->
     
 
 

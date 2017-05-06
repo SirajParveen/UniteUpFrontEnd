@@ -1,17 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
-img {
-	max-width: 400%;
-	height: auto;
-}
-#navbarid
-{
-	background:url(resources/imgs/apex-top-bar.gif);
-   color:white;
-}
-</style>
 <meta charset="ISO-8859-1">
 <title>Home</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -59,83 +48,82 @@ img {
 </head>
 
 <body data-ng-app="myApp" data-ng-controller="UserController as vm">
-<nav class="navbar" id="navbarid"> 
-  
-  <!-- <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">
-        <img alt="Brand" src="resources/imgs/Creersite.png">
-      </a>
-    </div>
-  </div> -->
-  
+
+<script>
+document.body.style.backgroundImage = "url('resources/imgs/background.jpg')";
+</script>
+
+<!-- -------------------------- Navbar ----------------------------------- -->
+
+<nav class="navbar navbar-inverse">
   <div class="container-fluid">
-    <div class="navbar-header"> <a class="navbar-brand" href="#home"><b> </b>Home</a> </div>
-    
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse"	id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <!-- <li><a href="#blog">Blog</a></li> 
-				 <li><a href="#viewblog">View Blogs</a></li> -->
+  
+  
+  <ul class="nav navbar-nav">
+      <li><a href="#"><img src="resources/imgs/logo.gif" height="70" width="70" class="img-circle"> </a>
+        </ul>
         
-        <li class="dropdown"><a class="dropdown-toggle"	data-toggle="dropdown" href="#viewblog">Blogs <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#blog">CreateBlog</a></li>
-            <li><a href="#viewblog">ViewBlog</a></li>
-          </ul>
-        </li>
-<!---------------------------------Jobs-->
-        <li class="dropdown"> <a class="dropdown-toggle"	data-toggle="dropdown" href="#jobs">Jobs <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li data-ng-show="currentUser.role=='Admin'"><a href="#jobs">CreateJob</a></li>
+        <ul class="nav navbar-nav">
+       <li> <h2 style="color: white;"><b>UniteUp</b></h2>
+		</li>
+		</ul>
+		<br>
+  &nbsp;&nbsp;  
+   <ul class="nav navbar-nav">
+      <li><a href="#home">Home</a></li>
+      
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Blogs <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#blog">CreateBlog</a></li>
+          <li><a href="#viewblog">ViewBlog</a></li>
+        </ul>
+      </li>
+      
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Jobs <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li data-ng-show="currentUser.role=='Admin'"><a href="#jobs">CreateJob</a></li>
             <li data-ng-show="currentUser.role=='Student'"><a href="#applyjob">ApplyJobs</a></li>
-          </ul>
-        </li>
-        <!--  <li><a href="#forum">Forum</a></li>
-				 <li><a href="#individualforum">View Forum</a></li> -->
-        
-        
-        <!---------------------------------Forums-->
-        <li class="dropdown"><a class="dropdown-toggle"
-						data-toggle="dropdown" href="#forum">Forums <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#forum">CreateForum</a></li>
+        </ul>
+      </li>
+      
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Forums <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#forum">CreateForum</a></li>
             <li><a href="#viewforum">ViewForum</a></li>
-          </ul>
+        </ul>
+      </li>
+      
+    </ul>
+    
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#register" data-ng-hide="globals.currentUser.islogged"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="#login" data-ng-hide="globals.currentUser.islogged"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+   
+   <li style="padding-top:20px;"  data-ng-show="globals.currentUser.islogged">
+          <p	style="color: white";>Welcome:{{globals.currentUser.username}}</p>
         </li>
-        
-			<!--        Friends-->
+   
+			<!-- Friends -->
+			
         <li data-ng-hide="currentUser.role=='Admin'">
         	<a href="#users" data-ng-show="globals.currentUser.islogged">Find Friends</a>
         </li>
         <li data-ng-hide="currentUser.role=='Admin'">
         	<a href="#chat" data-ng-show="globals.currentUser.islogged">Chat</a>
          </li>
-      </ul>
-   
-<!--/*      Right pane for Login*/-->
-
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#register"
-						data-ng-hide="globals.currentUser.islogged"><i
-							class="glyphicon glyphicon-user"></i></a></li>
-        <li><a href="#login"
-						data-ng-hide="globals.currentUser.islogged"><i
-							class="glyphicon glyphicon-log-in"></i></a></li>
-        <li style="padding-top:20px;"  data-ng-show="globals.currentUser.islogged">
-          <p	style="color: white";>Welcome:{{globals.currentUser.username}}</p>
-        </li>
+						
         <li data-ng-show="globals.currentUser.islogged"><a
 						href="#myprofile">My Profile</a></li>
         <li><a href="" data-ng-show="globals.currentUser.islogged"
 						data-ng-click="vm.logout()"><i
 							class="glyphicon glyphicon-log-out"></i>logout</a></li>
       </ul>
-      <!-- {{currentUser.id}} --> 
-      
-    </div>
-  </div>
+       
+      </div>
 </nav>
+
+<!-- ------------------------------------- Navbar Ending -------------------------------- -->
+
 <div data-ng-view></div>
 </body>
 <script type="text/javascript">
