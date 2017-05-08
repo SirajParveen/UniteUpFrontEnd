@@ -74,7 +74,7 @@ document.body.style.backgroundImage = "url('resources/imgs/background.jpg')";
       
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Blogs <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a href="#blog">CreateBlog</a></li>
+          <li><a href="#blog" data-ng-hide="blog.userid==globals.currentUser.username">CreateBlog</a></li>
           <li><a href="#viewblog">ViewBlog</a></li>
         </ul>
       </li>
@@ -83,12 +83,13 @@ document.body.style.backgroundImage = "url('resources/imgs/background.jpg')";
         <ul class="dropdown-menu">
           <li data-ng-show="currentUser.role=='Admin'"><a href="#jobs">CreateJob</a></li>
             <li data-ng-show="currentUser.role=='Student'"><a href="#applyjob">ApplyJobs</a></li>
+            <li data-ng-show=""><a href="#jobslist">ViewJobs</a></li>
         </ul>
       </li>
       
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Forums <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a href="#forum">CreateForum</a></li>
+          <li><a href="#forum" data-ng-hide="forum.userid==globals.currentUser.username">CreateForum</a></li>
             <li><a href="#viewforum">ViewForum</a></li>
         </ul>
       </li>

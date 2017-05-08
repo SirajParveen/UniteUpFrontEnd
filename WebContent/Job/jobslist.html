@@ -15,7 +15,7 @@
 </head>
 
 <body data-ng-app="myApp">
-<div data-ng-init="getjobs()">
+<div data-ng-init="jobslist()">
 <div data-ng-repeat="job in jobs">
 <div class="container">
 	<div class="row">
@@ -33,8 +33,6 @@
 <div class="span3">
         
         		<h3 class="text-info">{{job.jobdetails}}</h3></div>
-        		
-        		<button data-ng-hide="forum.userid==globals.currentUser.username" type="button" class="btn btn-primary" onclick="alert('Thanks u r successfully applied for this job')">Apply Job!</button>
 </div></div></div></div></div></div>
 
 

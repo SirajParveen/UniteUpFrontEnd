@@ -4,7 +4,7 @@ app.config(function($routeProvider,$locationProvider) {
 	
     $routeProvider
     .when("/", {
-        templateUrl : "Blog/viewblog.html",
+        templateUrl : "home/Home.html",
     
     })
      
@@ -56,6 +56,10 @@ app.config(function($routeProvider,$locationProvider) {
     })
     .when("/applyjob",{
     	templateUrl: "Job/ViewJob.html",
+    	controller: "jobctrl"
+    })
+    .when("/jobslist",{
+    	templateUrl: "Job/jobslist.html",
     	controller: "jobctrl"
     })
     .when("/individualforum",{

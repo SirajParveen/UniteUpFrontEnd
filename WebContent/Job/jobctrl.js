@@ -34,4 +34,15 @@ app.controller('jobctrl', ['$scope','$http',function($scope,$http) {
 			alert("Error");
 		})
 	};
+	$scope.jobslist=function(){
+		$http({
+			method : 'GET',
+			url : BASE_URL+'/jobslist'
+		}).success(function(data, status, headers, config) {
+			$scope.jobs=data;
+			//alert(data); 
+		}).error(function(data, status, headers, config) {
+			alert("Error");
+		})
+	};
 }])
