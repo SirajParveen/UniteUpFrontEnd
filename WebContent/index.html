@@ -83,7 +83,7 @@ document.body.style.backgroundImage = "url('resources/imgs/background.jpg')";
         <ul class="dropdown-menu">
           <li data-ng-show="currentUser.role=='Admin'"><a href="#jobs">CreateJob</a></li>
             <li data-ng-show="currentUser.role=='Student'"><a href="#applyjob">ApplyJobs</a></li>
-            <li data-ng-show=""><a href="#jobslist">ViewJobs</a></li>
+            <li data-ng-show="currentUser.role=='Admin'"><a href="#jobslist">ViewJobs</a></li>
         </ul>
       </li>
       
