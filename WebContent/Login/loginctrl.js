@@ -1,8 +1,8 @@
 app.controller('UserController', [ '$http', '$scope', 'UserService',
 		'$location', '$rootScope', '$cookieStore',
 		function($http, $scope, UserService, $location, $rootScope, $cookieStore) {
-			console.log('LoginControler');
-			var BASE_URL = 'http://localhost:8383/UniteUpRestServices';
+			console.log('LoginController');
+			var BASE_URL = 'http://localhost:8080/UniteUpRestServices';
 
 			var self = this;
 			self.user = {
@@ -13,8 +13,6 @@ app.controller('UserController', [ '$http', '$scope', 'UserService',
 					  role:'',
 					errorMessage:'',
 					password : '',
-					
-					  
 			};
 			
 			

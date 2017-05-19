@@ -5,9 +5,7 @@ app.config(function($routeProvider,$locationProvider) {
     $routeProvider
     .when("/", {
         templateUrl : "home/Home.html",
-    
     })
-     
     .when("/home", {
         templateUrl : "home/Home.html",
         controller:'UserController'
@@ -33,14 +31,22 @@ app.config(function($routeProvider,$locationProvider) {
         controller :'forumctrl'
        
     })
+    .when("/event", {
+        templateUrl : "Event/event.html",
+        controller :'eventctrl'
+       
+    })
+    .when("/viewevent",{
+    	templateUrl: "Event/viewevent.html",
+    	controller: "eventctrl"
+    })
     .when("/register",{
     	templateUrl: "Users/register.html",
     	controller: "userctrl"
     })
     .when("/login",{
     	templateUrl:"Login/Login.html",
-    	controller:'UserController',
-   
+    	controller:'UserController'
     })
          .when("/users",{
     	templateUrl: "Friend/AllUsers.html",
@@ -48,7 +54,7 @@ app.config(function($routeProvider,$locationProvider) {
     })
     .when("/chat",{
     	templateUrl: "Chat/chat.html",
-    	controller: "chatController",
+    	controller: "chatController"
     })
     .when("/jobs",{
     	templateUrl: "Job/CreateJob.html",
@@ -96,7 +102,7 @@ function run($rootScope, $location, $cookieStore, $http) {
 
     $rootScope.$on('$locationChangeStart', function (event, next, current) {
         // redirect to login page if not logged in and trying to access a restricted page
-        var restrictedPage = $.inArray($location.path(), ['/login', '/register','/home','/viewforum','/viewblog']) === -1;
+        var restrictedPage = $.inArray($location.path(), ['/login', '/register','/home','/viewforum','/viewblog','/viewevent']) === -1;
         var adminPage = $.inArray($location.path(),['/admin']) === 1;
         var role=$rootScope.currentUser.role;
         var loggedIn = $rootScope.globals.currentUser;

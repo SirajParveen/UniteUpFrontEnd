@@ -8,7 +8,7 @@ app.factory(
             function($http, $q, $rootScope,$cookieStore) {
                 console.log("blogService is started......!")
 
-                var BASE_URL = 'http://localhost:8383/UniteUpRestServices';
+                var BASE_URL = 'http://localhost:8080/UniteUpRestServices';
                     return {
                 	  
                     fetchAllblogLikes: function() {

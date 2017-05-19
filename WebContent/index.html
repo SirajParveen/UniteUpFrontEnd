@@ -4,28 +4,28 @@
 <meta charset="ISO-8859-1">
 <title>Home</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<link rel="stylesheet"
-	href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+ <!--Bootstrap link config-->
+<link rel="stylesheet"	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet"	href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+	
+	<!--angular likes-->
 <script type="text/javascript" src="resources/angular.min.js"></script>
 <script type="text/javascript" src="resources/angular-route.js"></script>
 <script type="text/javascript" src="resources/angular-cookies.js"></script>
-<script type="text/javascript"
-	src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
-<script type="text/javascript"
-	src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.1/sockjs.min.js"></script>
-<script type="text/javascript"
-	src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js"></script>
+
+<script type="text/javascript" 	src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+<script type="text/javascript"	    src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.1/sockjs.min.js"></script>
+<script type="text/javascript" 	src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js"></script>
+	
+	<!--Project Controlers js likes-->
 <script type="text/javascript" src="app.js"></script>
 <script type="text/javascript" src="Users/userctrl.js"></script>
 <script type="text/javascript" src="Login/loginctrl.js"></script>
 <script type="text/javascript" src="Login/loginService.js"></script>
 <script type="text/javascript" src="Admin/admin.js"></script>
+<script type="text/javascript" src="Event/eventctrl.js"></script>
 <script type="text/javascript" src="Blog/blogctrl.js"></script>
 <script type="text/javascript" src="Blog/blogService.js"></script>
 <script type="text/javascript" src="Forum/forumctrl.js"></script>
@@ -37,13 +37,11 @@
 <script type="text/javascript" src="Chat/chatService.js"></script>
 
 
-
+<!--Project CSS Files-->
 <link rel="stylesheet" href="resources/blog.css">
-<link rel="stylesheet" href="resources/register.css">
 <link rel="stylesheet" href="resources/user.css">
 <link rel="stylesheet" href="resources/login.css">
 <link rel="stylesheet" href="resources/comments.css">
-<script type="text/javascript" src="resources/login.js"></script>
 
 </head>
 
@@ -91,6 +89,13 @@ document.body.style.backgroundImage = "url('resources/imgs/background.jpg')";
         <ul class="dropdown-menu">
           <li><a href="#forum" data-ng-hide="forum.userid==globals.currentUser.username">CreateForum</a></li>
             <li><a href="#viewforum">ViewForum</a></li>
+        </ul>
+      </li>
+      
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Events <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#event" data-ng-show="currentUser.role=='Admin'">CreateEvent</a></li>
+            <li><a href="#viewevent">ViewEvent</a></li>
         </ul>
       </li>
       

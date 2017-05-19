@@ -1,5 +1,5 @@
 app.controller('adminctrl', [ '$scope', '$http',function($scope, $http) {
-	var BASE_URL = 'http://localhost:8383/UniteUpRestServices';
+	var BASE_URL = 'http://localhost:8080/UniteUpRestServices';
 	$scope.adminBlogs = function() {
 		console.log("get admin blogs")
 		$http({

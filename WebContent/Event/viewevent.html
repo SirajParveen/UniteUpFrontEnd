@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>View Event Page</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<style type="text/css">
+.btn1 {
+    height: 30px;
+    position: absolute;
+    right: 0;
+    top: 5px;
+    border-radius:1px;
+}
+</style>
+</head>
+<body data-ng-app="eventapp">
+	
+	<div class="container">
+	<div>
+
+	<form role="form" class="form-horizontal" action="" data-ng-submit="submit()" data-ng-controller="eventctrl">
+	 <h2> View Events</h2></div>
+	</form> 
+	</div> 
+	<div class="container" style="padding-top:10px">
+	<div class="row">
+        <div class="col-md-4 col-md-offset-3">
+         <form action="" class="search-form">
+                <div class="form-group has-feedback">
+	<input type="text" data-ng-model="search" placeholder="search event"  class="form-control">
+	 <span class="glyphicon glyphicon-search form-control-feedback"></span>
+	 </div>
+	 </form>
+	</div></div></div> 
+<div data-ng-init="getAllEvents()">
+	 <div data-ng-repeat="event in events | filter:search">
+	<div class="container">
+	<div class="row">
+ <div class="span3">
+        	<div class="well">
+        		<h2 class="text-info">{{event.name}}</h2>
+        		<h2 class="text-info">{{event.topic}}</h2> 
+        		<h2 class="text-info">{{doe | date : "dd.MM.y" }}</h2>  
+        		<h2 class="text-info" type="date" ng-model="event.dateAsString" value="{{ event.dateAsString }}" pattern="dd/MM/YYYY"></h2>
+        		<hr>        
+        		<p>{{event.description}}</p>
+        		<hr>
+              <p><button data-ng-show="event.userid==globals.currentUser.uid" data-ng-click="editevent(event.name,event.topic,event.doe,event.description)" class="btn btn-success">Edit</button>
+		<button data-ng-show="event.userid==globals.currentUser.uid" data-ng-click="deleteevent(event.id)" class="btn btn-primary btn-danger">Delete</button>
+		
+		</div>
+        </div></div></div>
+	
+	</div> 
+	</div>
+	
+		
+</body>
+</html>

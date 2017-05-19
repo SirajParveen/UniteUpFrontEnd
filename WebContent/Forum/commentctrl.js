@@ -1,6 +1,7 @@
+
 app.controller('commentctrl', [ '$scope', '$http','$rootScope', 
 	function($scope, $http,$rootScope) {
-	var BASE_URL = 'http://localhost:8383/UniteUpRestServices';
+	var BASE_URL = 'http://localhost:8080/UniteUpRestServices';
 	$scope.iforum=$rootScope.individualforums;
 	//console.log(individualforums)
 	$scope.submit=function(id){

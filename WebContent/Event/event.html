@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Event Page</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+<style type="text/css">
+.btn1 {
+    height: 30px;
+    position: absolute;
+    right: 0;
+    top: 5px;
+    border-radius:1px;
+}
+</style>
+</head>
+<body data-ng-app="myApp">
+	
+	<div class="container">
+	<div>
+	<form role="form" class="form-horizontal" action="" data-ng-submit="submit()" data-ng-controller="eventctrl">
+	<h2> Create New Event</h2>
+	<input type="hidden" data-ng-model="id" >
+	
+	       <div class="form-group">
+                    <label for="name" class="col-sm-3 control-label">Name</label>
+                    <div class="col-sm-9">
+		 <input type="text" name="name" data-ng-model="name" class="form-control" autofocus required=""> <br>
+		</div></div>
+		
+	 <div class="form-group">
+                    <label for="topic" class="col-sm-3 control-label">Topic</label>
+                    <div class="col-sm-9">
+		 <input type="text" name="topic" data-ng-model="topic" class="form-control" autofocus required=""> <br>
+		</div></div>
+		
+		      <div class="form-group">
+		           <label for="doe" class="col-sm-3 control-label">Date of Event</label>
+                    <div class="col-sm-9">
+                        <input type="date" id="doe" required="" data-ng-model="doe" class="form-control">
+                    </div></div>
+		
+		 <div class="form-group">
+                    <label for="description" class="col-sm-3 control-label">Description</label>
+                    <div class="col-sm-9">
+		<textarea draggable="false" rows="10" name="description" data-ng-model="description" class="form-control" required=""></textarea>
+		</div></div>
+		 <div class="form-group">
+                    <div class="col-sm-9 col-sm-offset-3">
+			<button type="submit" class="btn btn-primary">Save Event</button>
+			</div></div>
+	</form>
+	</div>
+	<div class="container" style="padding-top:10px">
+	<div class="row">
+        <div class="col-md-4 col-md-offset-3">
+         <form action="" class="search-form">
+                <div class="form-group has-feedback">
+	<input type="text" data-ng-model="search" placeholder="search event"  class="form-control">
+	 <span class="glyphicon glyphicon-search form-control-feedback"></span>
+	 </div>
+	 </form>
+	</div></div></div> 
+<div data-ng-init="getAllEvents()">
+	 <div data-ng-repeat="event in events | filter:search">
+
+	
+	<div class="container">
+	<div class="row">
+ <div class="span3">
+        	<div class="well">
+        		<h2 class="text-info">{{event.title}}</h2>  
+        		<hr>        
+        		<p>{{event.content}}</p>
+        		<hr>
+              <p><button data-ng-show="event.userid==globals.currentUser.username" data-ng-click="editevent(event.id,event.title,event.content)" class="btn btn-success">edit</button>
+		<button data-ng-show="event.userid==globals.currentUser.username" data-ng-click="deleteevent(event.id)" class="btn btn-primary btn-danger">delete</button>
+		 <button align="right" class="btn btn-primary" data-ng-click="like(event.id)">Like</button> 
+		<i class="fa fa-thumbs-up"></i>{{event.eventlike}}</li>
+		</p>
+	        	</div>
+        </div></div></div>
+	
+	</div> 
+	</div>
+	</div>
+	
+</body>
+</html>

@@ -1,6 +1,6 @@
 var app=angular.module("blogapp",[])
 app.controller('blogctrl', [ '$scope', '$http',function($scope, $http) {
-	var BASE_URL = 'http://localhost:8383/UniteUpRestServices';
+	var BASE_URL = 'http://localhost:8080/UniteUpRestServices';
 
 	$scope.getAllBlogs= function() {
 		console.log("get all blogs")
@@ -44,9 +44,15 @@ app.controller('blogctrl', [ '$scope', '$http',function($scope, $http) {
 		})
 	};
 	$scope.editblog=function(id,title,content){
-		$scope.id=id;
+		$http({
+			method:'GET',
+			url:BASE_URL+'/editblog/'+id
+		}).success(function(data,status,headers,config){
+			$scope.getAllBlogs();
+			$scope.id=id;
 		$scope.title=title;
 		$scope.content=content;
+		})
 	};
 	$scope.like=function(id){
 		$http({

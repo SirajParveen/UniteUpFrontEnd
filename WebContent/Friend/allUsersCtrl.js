@@ -1,5 +1,5 @@
 app.controller('alluserctrl',['$scope','$http',function($scope,$http){
-	var BASE_URL = 'http://localhost:8383/UniteUpRestServices';
+	var BASE_URL = 'http://localhost:8080/UniteUpRestServices';
 	$scope.getAllUsers= function() {
 		console.log("usersctrl")
 		console.log("get all users")

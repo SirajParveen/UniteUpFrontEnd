@@ -1,5 +1,5 @@
 app.controller('userctrl', [ '$scope', '$http','$rootScope','$cookieStore', function($scope, $http,$rootScope,$cookieStore) {
-		var BASE_URL ='http://localhost:8383/UniteUpRestServices';
+		var BASE_URL ='http://localhost:8080/UniteUpRestServices';
 
 	$scope.submit = function() {
 		
@@ -28,11 +28,11 @@ app.controller('userctrl', [ '$scope', '$http','$rootScope','$cookieStore', func
 			$scope.address='';
 			$scope.gender='';
 			
-			alert("Thank you for registration......!")
+			alert("Thank You For Your Registration...!!!")
             $location.path('/login');
 
 		}).error(function(data,status,headers,config){
-			alert("Registion success.....!");
+			alert("You are successfully Registered");
 			$location.path('/login');
 		});
 	};

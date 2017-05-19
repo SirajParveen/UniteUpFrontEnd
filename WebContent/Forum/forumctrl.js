@@ -1,6 +1,8 @@
+//var app=angular.module("forumapp",[])
+//console.log("get all forum")
 app.controller('forumctrl', [ '$scope', '$http','$location','$rootScope', 
 	function($scope, $http,$location,$rootScope) {
-	    var BASE_URL = 'http://localhost:8383/UniteUpRestServices';
+	    var BASE_URL = 'http://localhost:8080/UniteUpRestServices';
 	
 	$scope.getAllForum= function() {
 		console.log("get all forum")
