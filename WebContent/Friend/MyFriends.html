@@ -5,15 +5,16 @@
 <title>My Friends Page</title>
 </head>
 <body data-ng-app="myApp">
+<br><br>
 <div data-ng-controller="myfriendctrl">
 <div data-ng-init="getmyfriends()">
 <div data-ng-repeat="myfriend in myfriends">
-Your Friend:{{myfriend.friendid}}
-Online:{{myfriend.isonline}}
+<h2 class="text-info">Your Friend : {{myfriend.friendid}}</h2><br>
+<h4><span class="label label-info"><font size="3">Online:{{myfriend.isonline}}</font></span></h4>
 </div>
 </div>
-</div>
-Note:-o is online,
-f is offline
+</div><br><br>
+<p>Note:- o is online,
+f is offline</p>
 </body>
 </html>

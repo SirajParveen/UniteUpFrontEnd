@@ -3,21 +3,19 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Individual Forum Page</title>
-<script type="text/javascript" src="forumctrl.js"></script>
+
 </head>
 <body data-ng-app="myApp">
-	<h1 align="center">Forum</h1>
-
+<br><br>
+	<h1 align="center"><b>Forum Comment</b></h1>
 	<div data-ng-controller="commentctrl">
 
-		<h2>{{iforum.name}}</h2>
+		<h2 class="text-info">NAME : {{iforum.name}}</h2>
 		<br>
-		<h3>Topic:{{iforum.topic}}</h3>
+		<p ><span class="label label-info"><font size="3">TOPIC : {{iforum.topic}}</font></span></p>
 		<br>
 		<p>
-		<h3>Description:</h3>
-		{{iforum.description}}
-		</p>
+		<h3>DESCRIPTION : {{iforum.description}}</h3><br>
 
 		<section class="content-item" id="comments">
 			<div class="container">
@@ -36,13 +34,12 @@
 									<div class="form-group col-xs-12 col-sm-9 col-lg-10">
 										<textarea class="form-control" id="message"
 											placeholder="Your message" data-ng-model="comment"
-											required=""></textarea>
+											required></textarea>
 									</div>
 								</div>
 							</fieldset>
 						</form>
 						<div data-ng-init="getcomment(iforum.id)">
-						
 							<h3>{{comments.length}} Comments</h3>
 
 							<!-- COMMENT 1 - START -->
@@ -53,7 +50,6 @@
 										src="http://bootdey.com/img/Content/avatar/avatar1.png" alt=""></a>
 									<div class="media-body">
 										<h4 class="media-heading">{{users.username}}</h4>
-										
 									</div>
 									<p>{{comm.comment}}</p>
 									<ul class="list-unstyled list-inline media-detail pull-left">

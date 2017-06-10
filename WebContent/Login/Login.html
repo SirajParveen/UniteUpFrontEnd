@@ -3,18 +3,65 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Login Page</title>
-<!-- <script type="text/javascript" src="loginctrl.js"></script>
-<script type="text/javascript" src="loginService.js"></script> -->
-
+<link rel="stylesheet" href="resources/login.css">
 </head>
 <body data-ng-controller="Usercontroller as vm">
+    <br><br>
+        <div class="container">
+            
+            <section>				
+                <div id="container_demo" >
+                    <!-- hidden anchor to stop jump http://www.css3create.com/Astuce-Empecher-le-scroll-avec-l-utilisation-de-target#wrap4  -->
+                    <a class="hiddenanchor" id="toregister"></a>
+                    <a class="hiddenanchor" id="tologin"></a>
+                    <div id="wrapper">
+                        <div id="login" class="animate form">
+                            <form class="login" data-ng-submit="vm.login()">
+                                <h1>Log in</h1> 
+                                <p>
+                                    <input id="username" name="username" required="required" type="text" placeholder="User Name" data-ng-model="vm.user.username"/>
+                                </p>
+                                <p>
+                                    <input id="password" name="password" required="required" type="password" placeholder="Password" data-ng-model="vm.user.password"/> 
+                                </p>
+                                <p class="keeplogin"> 
+									<input type="checkbox" name="loginkeeping" id="loginkeeping" value="loginkeeping" /> 
+									<label for="loginkeeping">Keep me logged in</label>
+								</p>
+								<p class="signin button"> 
+									<input type="submit" class="submit" value="Login"/> 
+								</p>
+                                 <!-- <center><button type="submit" class="submit"><i class="fa fa-long-arrow-right"></i>&nbsp;LOGIN</button></center> -->
+                                <p class="change_link">
+									Not a member yet ?
+									<a href="#register" class="to_register">Sign Up and Join us</a>
+								</p>
+                            </form>
+                        </div>		
+                    </div>
+                </div>  
+            </section>
+        </div>
+    </body>
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Login Page</title>
+</head>
+<body data-ng-controller="Usercontroller as vm">
+
+<img alt="error" src="https://upload.wikimedia.org/wikipedia/commons/c/ca/Crystal_Clear_app_Login_Manager.png">
 
  <div class="wrapper">
  <form class="login"  data-ng-submit="vm.login()">
   
   <fieldset>
     
-  	<legend class="legend"><center>Please Login With Valid Credentials</center> </legend>
+  	<legend class="legend" align="top">Please Login With Valid Credentials</legend>
     
     <div class="input">
      <span><i class="fa fa-envelope-o"></i> User Name</span>
@@ -41,3 +88,4 @@
 </body>
 </html>
 
+ -->

@@ -5,10 +5,10 @@
 <title>Home Page</title>
 
  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
   
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
 
  
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
@@ -19,118 +19,115 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js"></script>
 
 
-<link rel="stylesheet" href="resources/blog.css">
-<link rel="stylesheet" href="resources/register.css">
-<link rel="stylesheet" href="resources/user.css">
-<link rel="stylesheet" href="resources/login.css">
+<!--Project CSS Files-->
+ <link rel="stylesheet" href="resources/blog.css">
 <link rel="stylesheet" href="resources/comments.css">
-<script type="text/javascript" src="resources/login.js"></script>
-
-
+<link rel="stylesheet" href="resources/login-box.css">
+<link rel="stylesheet" href="resources/login.js">
+<link rel="stylesheet" href="resources/navbar.css">
+<link rel="stylesheet" href="resources/search.css">
 
 </head>
 
-<body  data-ng-app="blogapp">
+<body data-ng-app="myApp">
 
-	    <!--------------------------------------- Carousel ----------------------------------------->
+<!-- services -->
+	<div class="services">
+		<div class="container">
+			<h3 class="w3_agile_head" style="color: black;"><b>USERS</b></h3>
+			<p class="augue_agile" style="color: black;"><b>OF THIS WEBSITE</b></p>
 
-<div id="carousel-example" class="carousel slide" data-ride="carousel">
-  <ol class="carousel-indicators">
-    <li data-target="#carousel-example" data-slide-to="0" class="active"></li>
-    <li data-target="#carousel-example" data-slide-to="1"></li>
-    <li data-target="#carousel-example" data-slide-to="2"></li>
-  </ol>
+			<div class="w3layouts_services_grids">
+				<div class="col-md-4 w3layouts_services_grid">
+					<div class="w3layouts_services_grid_main">
+						<div class="w3layouts_services_grid1">
+							<img src="Monetary/images/9.jpg" alt=" " class="img-responsive" />
+							<div class="w3layouts_services_grid1_pos">
+								<h4>Business</h4>
+							</div>
+						</div>
+						<h5><b>Students</b></h5>
+						<p><b>They Are The Existing Students Of This Website</b></p>
+					</div>
+				</div>
+				<div class="col-md-4 w3layouts_services_grid">
+					<div class="w3layouts_services_grid_main">
+						<div class="w3layouts_services_grid1">
+							<img src="Monetary/images/8.jpg" alt=" " class="img-responsive" />
+							<div class="w3layouts_services_grid1_pos">
+								<h4>Business</h4>
+							</div>
+						</div>
+						<h5><b>Alumni</b></h5>
+						<p><b>They Are The Ex-Students Of This Website</b></p>
+					</div>
+				</div>
+				<div class="col-md-4 w3layouts_services_grid">
+					<div class="w3layouts_services_grid_main">
+						<div class="w3layouts_services_grid1">
+							<img src="Monetary/images/11.jpg" alt=" " class="img-responsive" />
+							<div class="w3layouts_services_grid1_pos">
+								<h4>Business</h4>
+							</div>
+						</div>
+						<h5><b>Employee</b></h5>
+						<p><b>They Are The Employee Of This Website</b></p>
+					</div>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
 
-  <div class="carousel-inner">
-    <div class="item active">
-      <a href="#"><img src="resources/imgs/niit.jpg"  width="1500" height="1000"/></a>
-    </div>
-    <div class="item">
-      <a href="#"><img src="resources/imgs/collaboration.jpg" width="1600"/></a>
-    </div>
-    <div class="item">
-      <a href="#"><img src="resources/imgs/team.jpg" width="1600"/></a>
-    </div>
-  </div>
-
-  <a class="left carousel-control" href="#carousel-example" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left"></span>
-  </a>
-  <a class="right carousel-control" href="#carousel-example" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right"></span>
-  </a>
-</div>
-<!--------------------------------------- Carousel Ending  ----------------------------------------->
-       		<br><br>	
-		<br><br>
-  
-	<div data-ng-init="getAllBlogs()">
-	 <div data-ng-repeat="blog in blogs | filter:search">
-	<div class="container">
-	<div class="row">
- <div class="span3">
-        	<div class="well">
-        		<h2 class="text-info">{{blog.title}}</h2>  
-        		<hr>        
-        		<p>{{blog.content}}</p>
-        		<hr>
-              <p><button data-ng-show="blog.userid==globals.currentUser.uid" data-ng-click="editblog(blog.id,blog.title,blog.content)" class="btn btn-success">Edit</button>
-		<button data-ng-show="blog.userid==globals.currentUser.uid" data-ng-click="deleteblog(blog.id)" class="btn btn-primary btn-danger">Delete</button>
-		<div data-ng-if="(blog.userid==globals.currentUser.uid)">
-		<button align="right" class="btn btn-primary"  data-ng-show="globals.currentUser.islogged" data-ng-click="like(blog.id)">Like this Blog</button>
-
-		         		
-		<i class="fa fa-thumbs-up"></i>{{blog.bloglike}}
-
-		
-
-	        	</div>
-        </div></div></div></div>
+				<div class="col-md-4 w3layouts_services_grid">
+					<div class="w3layouts_services_grid_main">
+						<div class="w3layouts_services_grid1">
+							<img src="Monetary/images/7.jpg" alt=" " class="img-responsive" />
+							<div class="w3layouts_services_grid1_pos">
+								<h4>Business</h4>
+							</div>
+						</div>
+						<h5><b>Admin</b></h5>
+						<p><b>Administrator Of This Website</b></p>
+					</div>
+				</div>
 	
-	</div> 
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	
+<!-- //services -->
+
+<!------------------------------------------------ footer -------------------------------------------------> 
+	<div class="footer">
+		<div class="container">
+			<h2><a href="#">UniteUp</a></h2>
+			<h3>(+000) 123 456 789</h3>
+			<form action="#" method="post">
+				<input type="email" name="email" placeholder="Your Email..." required>
+				<input type="submit" value="Subscribe">
+			</form>
+			<div class="agileits_w3layouts_nav">
+				<div class="agileits_w3layouts_nav_left">
+					<ul>
+						<li><a href="#">Privacy Policy</a></li>
+						<li><a href="#">Copyrights</a></li>
+						<li><a href="#">Terms of Use & Licenses</a></li>
+					</ul>
+				</div>
+				<div class="agileits_w3layouts_nav_right">
+					<ul>
+						<li><a href="#" class="w3_agile_facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+						<li><a href="#" class="agile_twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+						<li><a href="#" class="w3_agile_dribble"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+						<li><a href="#" class="w3_agile_vimeo"><i class="fa fa-vimeo" aria-hidden="true"></i></a></li>
+					</ul>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+			<p>© 2017 UniteUp. All rights reserved | Design by <a href="#">Siraj Parveen</a></p>
+		</div>
 	</div>
-		<br><br>	
-		<br><br>
-		<!-- <div style="color: black;">
-    <section id="footer-sec" style="color: white;">
-             
-            <div class="container">
-           <div class="row  pad-bottom" >
-            <div class="col-md-4">
-                <h4> <strong>ABOUT COMPANY</strong> </h4>
-                            <p>
-                               CareerSite.Com is one of the largest Alumini Site.<br>
-                                IT COLLABORATE students and employees in one site.<br>
-                                CareerSite.Com many followers all over INDIA.
-                            </p>
-                <a href="#" >read more</a>
-                </div>
-               <div class="col-md-4">
-                    <h4> <strong>SOCIAL LINKS</strong> </h4>
-                   <p>
-                     <a href="#"><i class="fa fa-facebook-square fa-3x"  ></i></a>  
-                        <a href="#"><i class="fa fa-twitter-square fa-3x"  ></i></a>  
-                        <a href="#"><i class="fa fa-linkedin-square fa-3x"  ></i></a>  
-                       <a href="#"><i class="fa fa-google-plus-square fa-3x"  ></i></a>  
-                   </p>
-                </div>
-               <div class="col-md-4">
-                   <h4> <strong>OUR LOCATION</strong> </h4>
-                            <p>
-                               KPHB coloney<br>
-                               Kumatpally<br>
-                              Hyderbad,500072.
-                            </p>
-                    <a href="#" class="btn btn-primary" >SEND QUERY</a>
-                </div>
-               </div>
-            </div>
-    </section>  
-    </div>        -->
-    
+<!----------------------------------------------//footer ---------------------------------------->
 
-
-	
+	    
 </body>
-
 </html>

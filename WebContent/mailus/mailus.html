@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Mail Us Page</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<body data-ng-app="blogapp">
+
+		<!-- mail -->
+		<div data-ng-init="mailus()">
+	<div class="map">
+	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d60875.47722848494!2d78.30927677801594!3d17.52100212752417!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9279676f8f1d%3A0x6d53fb3b4ed44f8a!2sMiyapur%2C+Hyderabad%2C+Telangana!5e0!3m2!1sen!2sin!4v1495698286765" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+	</div>
+
+	<div class="mail">
+		<div class="container">
+			<h3 class="w3_agile_head">Mail Us</h3>
+			<p class="augue_agile" style="color: white;">Have Questions??? Interact With Us</p>
+
+			<div class="w3_agile_mail_grids_agile">
+				<div class="col-md-8 w3_agile_mail_left">
+					<div class="agileits_mail_grid_right1 agile_mail_grid_right1">
+						<form action="#" method="post" data-ng-controller="mailctrl">
+							<span>
+								<i>Name</i>
+								<input type="text" name="Name" placeholder=" " required="">
+							</span>
+							<span>
+								<i>Email</i>
+								<input type="email" name="Email" placeholder=" " required="">
+							</span>
+							<span>
+								<i>Subject</i>
+								<input type="text" name="Subject" placeholder=" " required="">
+							</span>
+							<span>
+								<i>Message</i>
+								<textarea name="Message" placeholder=" " required=""></textarea>
+							</span>
+							<input type="submit" value="Submit Now">
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4 w3_agile_mail_right">
+				<div class="w3layouts_mail_grid_left">
+					<div class="w3layouts_mail_grid_left1">
+						<span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+					</div>
+					<div class="w3layouts_mail_grid_left2">
+						<h3>Mail Us</h3>
+						<a href="#" style="color: white;">UniteUp@gmail.com</a>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+				<div class="w3layouts_mail_grid_left">
+					<div class="w3layouts_mail_grid_left1">
+						<span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+					</div>
+					<div class="w3layouts_mail_grid_left2">
+						<h3>Address</h3>
+						<p style="color: white;">PO Box 97845 Hyderabad , India</p>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+				<div class="w3layouts_mail_grid_left">
+					<div class="w3layouts_mail_grid_left1">
+						<span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>
+					</div>
+					<div class="w3layouts_mail_grid_left2">
+						<h3>Phone</h3>
+						<p style="color: white;">+(0121) 121 121</p>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div></div>
+<!-- //mail -->	
+
+</body>
+</html>

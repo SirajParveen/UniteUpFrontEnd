@@ -16,8 +16,7 @@ app.controller('jobctrl', ['$scope','$http',function($scope,$http) {
 			data : $scope.job
 		}).success(function(data, status, headers, config) {
 			$scope.users=data;
-			
-			//alert(data); 
+			alert("Successfully Created The Job"); 
 		}).error(function(data, status, headers, config) {
 			alert("Error");
 		});

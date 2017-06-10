@@ -1,24 +1,25 @@
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>View Forum Page</title>
-<script type="text/javascript" src="Forum/forumctrl.js"></script>
-</head>
+<title>Form Page</title>
 <body data-ng-app="myApp">
 
 <div class="container">
 <form role="form" data-ng-submit="submit()" class="form-horizontal"
-		 action="" data-ng-controller="forumctrl">
-		  <h2> View Forums</h2>
+		 action="" data-ng-controller="forumctrl"><br>
+		  <h2 align="center"><b>View Forums</b></h2>
+		  
 	</form>
 	</div>
+	
 	<div class="container" style="padding-top:10px">
 	<div class="row">
         <div class="col-md-4 col-md-offset-3">
          <form action="" class="search-form">
                 <div class="form-group has-feedback">
-	<input type="text" data-ng-model="search" placeholder="search forum"  class="form-control">
+	<b><input type="text" data-ng-model="search" placeholder="Search Forum"  class="form-control"></b>
 	 <span class="glyphicon glyphicon-search form-control-feedback"></span>
 	 </div>
 	 </form>
@@ -29,14 +30,13 @@
 	<div class="row">
  <div class="span3">
         	<div class="well">
-<h2 class="text-info"><a href="" data-ng-click="getforum(forum.id)">{{forum.name}}</a></h2>	
-		<p ><span class="label label-info"><font size="3">{{forum.topic}}</font></span></p>
-		<hr>
-	<p>{{forum.description}}</p>
+<h2 class="text-info">NAME : {{forum.name}}</h2>	<hr>
+		<p ><span class="label label-info"><font size="3">TOPIC : {{forum.topic}}</font></span></p><hr>
+	<p>DESCRIPTION : {{forum.description}}</p>
 	<hr>
 	<button data-ng-show="forum.userid==globals.currentUser.username" data-ng-click="editforum(forum.id,forum.name,forum.topic,forum.description)" class="btn btn-success">Edit</button>
 	<button data-ng-show="forum.userid==globals.currentUser.username" data-ng-click="deleteforum(forum.id)" class="btn btn-primary btn-danger">Delete</button>
-	<!--  <a href="#login"><button align="right" class="btn btn-primary" data-ng-click="like(blog.id)">Login To Comment This Forum</button> </a> -->
+	 <a href=""><button align="right" class="btn btn-primary" data-ng-click="getforum(forum.id)" data-ng-show="globals.currentUser.islogged">Comment This Forum</button> </a>
 	</div>
 	</div></div></div></div></div>
 </body>

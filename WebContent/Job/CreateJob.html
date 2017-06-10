@@ -3,14 +3,60 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Create Job Page</title>
+<style type="text/css">
+.require {
+    color: #666;
+}
+label small {
+    color: #999;
+    font-weight: normal;
+}
+</style>
 </head>
-<body data-ng-app="myApp">
-<form action="" data-ng-controller="jobctrl" data-ng-submit="submit()" ><hr>
-title:<input type="text" data-ng-model="title"><hr>
-company:<input type="text" data-ng-model="company"><hr>
-jobdetails:<input type="text" data-ng-model="jobdetails"><hr>
- date:<input type="date" data-ng-model="lastdate"><hr>
- <input type="submit">
-</form>
+<body  data-ng-app="myApp">
+<br><br>
+<div class="container">
+	<div class="row">
+	    
+	<div class="col-md-8 col-md-offset-2">
+	        
+    		<h1 align="center"><b>Create Job</b></h1>
+    		<form action="" data-ng-controller="jobctrl" data-ng-submit="submit()">
+    		    
+    		    <div class="form-group">
+    		        <label for="Title">Title :</small></label>
+    		    <input type="text" class="form-control" data-ng-model="title" required>
+    		           		    </div>
+    		    
+    		    <div class="form-group">
+    		        <label for="title">Company Name :<span class="require"></span></label>
+    		      <input type="text"  class="form-control" data-ng-model="company" required>
+    		    </div>
+    		    
+    		    <div class="form-group">
+    		        <label for="description">Description :</label>
+    		        <input type="text"  class="form-control" data-ng-model="jobdetails" required>
+    		    </div>
+    		    
+    		      <div class="form-group">
+    		        <label for="description">Date :</label>
+    		      <input type="date"  class="form-control" data-ng-model="lastdate" required>
+    		    </div>&nbsp;&nbsp;
+    		    
+    		    <div class="form-group">
+    		        <button type="submit" class="btn btn-primary" onclick="alert('Successfully Created The Job...!!!')">
+    		            Create
+    		        </button>&nbsp;&nbsp;
+    		        <button class="btn btn-default" type="reset">
+    		            Reset
+    		        </button>
+    		    </div>
+    		    
+    		</form>
+		</div>
+		
+	</div>
+</div>
+
 </body>
 </html>

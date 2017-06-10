@@ -5,11 +5,12 @@
 <title>New Requests Page</title>
 </head>
 <body data-ng-app="myApp">
-<h1 style="align:center">New Requests</h1>
+<br><br>
+<h1  align="center">New Requests</h1>
 <div data-ng-controller="myfriendctrl">
 <div data-ng-init="getsnewrequests()">
 <div data-ng-repeat="request in newrequest">
-{{request.userid}}
+<h4><span class="label label-info"><font size="3">{{request.userid}}</font></span></h4>
 <button data-ng-click="accept(request.userid)">Accept</button>
 <button data-ng-click="reject(request.userid)">Reject</button>
 </div>

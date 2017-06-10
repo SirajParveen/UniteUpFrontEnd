@@ -9,7 +9,6 @@ app.config(function($routeProvider,$locationProvider) {
     .when("/home", {
         templateUrl : "home/Home.html",
         controller:'UserController'
-  
     })
     .when("/blog", {
         templateUrl : "Blog/blog.html",
@@ -34,13 +33,16 @@ app.config(function($routeProvider,$locationProvider) {
     .when("/event", {
         templateUrl : "Event/event.html",
         controller :'eventctrl'
-       
     })
     .when("/viewevent",{
     	templateUrl: "Event/viewevent.html",
     	controller: "eventctrl"
     })
-    .when("/register",{
+    .when("/mailus",{
+    	templateUrl: "mailus/mailus.html",
+    	controller: "mailctrl"
+    })
+      .when("/register",{
     	templateUrl: "Users/register.html",
     	controller: "userctrl"
     })

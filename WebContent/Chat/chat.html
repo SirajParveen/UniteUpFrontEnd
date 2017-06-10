@@ -7,7 +7,8 @@
 <script type="text/javascript" src="chatService.js"></script>
 </head>
 <body data-ng-app="myApp">
-<div data-ng-controller="chatController">
+<div data-ng-controller="chatController"><br><br>
+<div>
 <form data-ng-submit="addMessage()" name="messageForm" align="center">
 <input type="text" placeholder="Enter new Message" data-ng-model="message">
 <input type="submit" value="send">
@@ -16,6 +17,7 @@
 <time>{{message.time | date:'HH:mm'}}</time>
 <span >{{message.message}}</span>
 </p>
+</div>
 </div>
 </body>
 </html>

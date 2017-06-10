@@ -1,14 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="ISO-8859-1">
-<title>Home</title>
+<title>Index Page</title>
+<!-- for-mobile-apps -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
- <!--Bootstrap link config-->
-<link rel="stylesheet"	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<link rel="stylesheet"	href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Monetary Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<link href="Monetary/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="Monetary/css/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- js -->
+<script type="text/javascript" src="Monetary/js/jquery-2.1.4.min.js"></script>
+<!-- //js -->
+<link rel="stylesheet" href="Monetary/css/flexslider.css" type="text/css" media="screen" property="" />
+<link href="Monetary/css/popuo-box.css" rel="stylesheet" type="text/css" media="all" />
+<!-- font-awesome icons -->
+<link rel="stylesheet" href="Monetary/css/font-awesome.min.css" />
+<!-- //font-awesome icons -->
+<link href="//fonts.googleapis.com/css?family=Varela+Round&subset=hebrew" rel="stylesheet">
+<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
 	
 	<!--angular likes-->
 <script type="text/javascript" src="resources/angular.min.js"></script>
@@ -16,16 +29,17 @@
 <script type="text/javascript" src="resources/angular-cookies.js"></script>
 
 <script type="text/javascript" 	src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
-<script type="text/javascript"	    src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.1/sockjs.min.js"></script>
+<script type="text/javascript"	src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.1/sockjs.min.js"></script>
 <script type="text/javascript" 	src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js"></script>
 	
-	<!--Project Controlers js likes-->
+	<!--Project Controllers js -->
 <script type="text/javascript" src="app.js"></script>
 <script type="text/javascript" src="Users/userctrl.js"></script>
 <script type="text/javascript" src="Login/loginctrl.js"></script>
 <script type="text/javascript" src="Login/loginService.js"></script>
 <script type="text/javascript" src="Admin/admin.js"></script>
 <script type="text/javascript" src="Event/eventctrl.js"></script>
+<script type="text/javascript" src="mailus/mailctrl.js"></script>
 <script type="text/javascript" src="Blog/blogctrl.js"></script>
 <script type="text/javascript" src="Blog/blogService.js"></script>
 <script type="text/javascript" src="Forum/forumctrl.js"></script>
@@ -36,80 +50,82 @@
 <script type="text/javascript" src="Chat/chatController.js"></script>
 <script type="text/javascript" src="Chat/chatService.js"></script>
 
-
 <!--Project CSS Files-->
-<link rel="stylesheet" href="resources/blog.css">
-<link rel="stylesheet" href="resources/user.css">
-<link rel="stylesheet" href="resources/login.css">
+ <link rel="stylesheet" href="resources/blog.css">
 <link rel="stylesheet" href="resources/comments.css">
+<link rel="stylesheet" href="resources/login-box.css">
+<link rel="stylesheet" href="resources/login.js">
+<link rel="stylesheet" href="resources/navbar.css">
+<link rel="stylesheet" href="resources/search.css">
+<link rel="stylesheet" href="resources/regstyle.css">
 
 </head>
-
+	
 <body data-ng-app="myApp" data-ng-controller="UserController as vm">
 
-<script>
-document.body.style.backgroundImage = "url('resources/imgs/background.jpg')";
-</script>
-
-<!-- -------------------------- Navbar ----------------------------------- -->
-
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-  
-  
-  <ul class="nav navbar-nav">
-      <li><a href="#"><img src="resources/imgs/logo.gif" height="70" width="70" class="img-circle"> </a>
-        </ul>
-        
-        <ul class="nav navbar-nav">
-       <li> <h2 style="color: white;"><b>UniteUp</b></h2>
-		</li>
-		</ul>
-		<br>
-  &nbsp;&nbsp;  
-   <ul class="nav navbar-nav">
-      <li><a href="#home">Home</a></li>
-      
-      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Blogs <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="#blog" data-ng-hide="blog.userid==globals.currentUser.username">CreateBlog</a></li>
-          <li><a href="#viewblog">ViewBlog</a></li>
-        </ul>
-      </li>
-      
-      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Jobs <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li data-ng-show="currentUser.role=='Admin'"><a href="#jobs">CreateJob</a></li>
-            <li data-ng-show="currentUser.role=='Student'"><a href="#applyjob">ApplyJobs</a></li>
-            <li data-ng-show="currentUser.role=='Admin'"><a href="#jobslist">ViewJobs</a></li>
-        </ul>
-      </li>
-      
-      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Forums <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="#forum" data-ng-hide="forum.userid==globals.currentUser.username">CreateForum</a></li>
-            <li><a href="#viewforum">ViewForum</a></li>
-        </ul>
-      </li>
-      
-      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Events <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="#event" data-ng-show="currentUser.role=='Admin'">CreateEvent</a></li>
-            <li><a href="#viewevent">ViewEvent</a></li>
-        </ul>
-      </li>
-      
-    </ul>
-    
-    <ul class="nav navbar-nav navbar-right">
-      <li><a href="#register" data-ng-hide="globals.currentUser.islogged"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-      <li><a href="#login" data-ng-hide="globals.currentUser.islogged"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-   
-   <li style="padding-top:20px;"  data-ng-show="globals.currentUser.islogged">
-          <p	style="color: white";>Welcome:{{globals.currentUser.username}}</p>
+<!--------------------------------------- banner ---------------------------------------->
+	<div class="banner">
+		<div class="container">
+			<nav class="navbar navbar-default">
+				<div class="navbar-header navbar-left">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<h1><a class="navbar-brand" href="#home"><b>UniteUp</b></a></h1>
+				</div>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+					<nav class="cl-effect-13" id="cl-effect-13">
+						<ul class="nav navbar-nav">
+							<li class="active"><a href="#home">Home</a></li>
+							
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Blogs <b class="caret"></b></a>
+								<ul class="dropdown-menu agile_short_dropdown">
+									<li><a href="#blog" data-ng-hide="blog.userid==globals.currentUser.username">Create Blog</a></li>
+          							<li><a href="#viewblog">View Blogs</a></li>
+								</ul>
+							</li>
+							
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Jobs <b class="caret"></b></a>
+								<ul class="dropdown-menu agile_short_dropdown">
+									<li data-ng-show="currentUser.role=='Admin'"><a href="#jobs">Create Job</a></li>
+            						<li data-ng-show="currentUser.role=='Student'"><a href="#applyjob">Apply Jobs</a></li>
+            						<li data-ng-show="currentUser.role=='Admin'"><a href="#jobslist">View Jobs</a></li>
+								</ul>
+							</li>
+							
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Forums <b class="caret"></b></a>
+								<ul class="dropdown-menu agile_short_dropdown">
+									<li><a href="#forum" data-ng-hide="forum.userid==globals.currentUser.username">Create Forum</a></li>
+            						<li><a href="#viewforum">View Forums</a></li>
+								</ul>
+							</li>
+							
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Events <b class="caret"></b></a>
+								<ul class="dropdown-menu agile_short_dropdown">
+									<li><a href="#event" data-ng-show="currentUser.role=='Admin'">Create Event</a></li>
+            						<li><a href="#viewevent">View Events</a></li>
+								</ul>
+							</li>
+							
+							<li><a href="#mailus">Mail Us</a></li>
+							
+							
+					<li><a href="#register" data-ng-hide="globals.currentUser.islogged"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      				<li><a href="#login" data-ng-hide="globals.currentUser.islogged"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      			</ul>		
+						<br><br>
+						<ul class="nav navbar-nav">
+   <li style="padding-top:20px;" data-ng-show="globals.currentUser.islogged">
+          <p style="color: white;"><b>WELCOME : {{globals.currentUser.username}}</b></p>
         </li>
-   
-			<!-- Friends -->
 			
         <li data-ng-hide="currentUser.role=='Admin'">
         	<a href="#users" data-ng-show="globals.currentUser.islogged">Find Friends</a>
@@ -122,13 +138,77 @@ document.body.style.backgroundImage = "url('resources/imgs/background.jpg')";
 						href="#myprofile">My Profile</a></li>
         <li><a href="" data-ng-show="globals.currentUser.islogged"
 						data-ng-click="vm.logout()"><i
-							class="glyphicon glyphicon-log-out"></i>logout</a></li>
-      </ul>
-       
-      </div>
-</nav>
+							class="glyphicon glyphicon-log-out"></i>Logout</a></li>
+      					</ul>
+			</nav>
+		    </div>
+			</nav>
+			
+			<div class="agileits_w3layouts_banner_info">
+				<h2><b>WELCOME !!!</b></h2>
+				<p><b>A Place To Share Ideas</b></p>
+			</div>
+			<div class="thim-click-to-bottom">
+				<a href="#" class="scroll">
+					<i class="fa fa-chevron-down"></i>
+				</a>
+			</div>
+		</div>
+	</div>
+<!-------------------------------------------------- //banner ------------------------------------------->	
 
-<!-- ------------------------------------- Navbar Ending -------------------------------- -->
+<script src="Monetary/js/jquery.magnific-popup.js" type="text/javascript"></script>
+<script>
+	$(document).ready(function() {
+	$('.popup-with-zoom-anim').magnificPopup({
+		type: 'inline',
+		fixedContentPos: false,
+		fixedBgPos: true,
+		overflowY: 'auto',
+		closeBtnInside: true,
+		preloader: false,
+		midClick: true,
+		removalDelay: 300,
+		mainClass: 'my-mfp-zoom-in'
+	});
+																	
+	});
+</script>
+
+<!-- for bootstrap working -->
+	<script src="Monetary/js/bootstrap.js"></script>
+<!-- //for bootstrap working -->
+
+<!-- start-smooth-scrolling -->
+<script type="text/javascript" src="Monetary/js/move-top.js"></script>
+<script type="text/javascript" src="Monetary/js/easing.js"></script>
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- //start-smooth-scrolling -->
+
+<!-- here starts scrolling icon -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+				var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+				};
+			*/
+								
+			$().UItoTop({ easingType: 'easeOutQuart' });
+								
+			});
+	</script>
+<!-- //here ends scrolling icon -->
 
 <div data-ng-view></div>
 </body>
@@ -146,3 +226,149 @@ $('ul.nav li.dropdown').hover(function()
 		);
 </script>
 </html>
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Home</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+ Bootstrap link config
+<link rel="stylesheet"	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet"	href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+	
+	angular likes
+<script type="text/javascript" src="resources/angular.min.js"></script>
+<script type="text/javascript" src="resources/angular-route.js"></script>
+<script type="text/javascript" src="resources/angular-cookies.js"></script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.1/sockjs.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js"></script>
+	
+	Project Controllers js likes
+<script type="text/javascript" src="app.js"></script>
+<script type="text/javascript" src="Users/userctrl.js"></script>
+<script type="text/javascript" src="Login/loginctrl.js"></script>
+<script type="text/javascript" src="Login/loginService.js"></script>
+<script type="text/javascript" src="Admin/admin.js"></script>
+<script type="text/javascript" src="Event/eventctrl.js"></script>
+<script type="text/javascript" src="Blog/blogctrl.js"></script>
+<script type="text/javascript" src="Blog/blogService.js"></script>
+<script type="text/javascript" src="Forum/forumctrl.js"></script>
+<script type="text/javascript" src="Forum/commentctrl.js"></script>
+<script type="text/javascript" src="Friend/myfriendsctrl.js"></script>
+<script type="text/javascript" src="Friend/allUsersCtrl.js"></script>
+<script type="text/javascript" src="Job/jobctrl.js"></script>
+<script type="text/javascript" src="Chat/chatController.js"></script>
+<script type="text/javascript" src="Chat/chatService.js"></script>
+
+Project CSS Files
+<link rel="stylesheet" href="resources/blog.css">
+<link rel="stylesheet" href="resources/user.css">
+<link rel="stylesheet" href="resources/login.css">
+<link rel="stylesheet" href="resources/comments.css">
+</head>
+<body data-ng-app="myApp" data-ng-controller="UserController as vm">
+
+<script>
+document.body.style.backgroundImage = "url('resources/imgs/background.jpg')";
+</script>
+
+-------------------------- Navbar -----------------------------------
+
+<nav class="navbar navbar-default" class="banner">
+  <div class="container-fluid">
+  
+  
+  <ul class="nav navbar-nav">
+      <li><a href="#"><img src="resources/imgs/logo.gif" height="40" width="40" class="img-circle"> </a>
+        </ul>
+        
+        <ul class="nav navbar-nav">
+       <li> <h2 style="color: white;"><b>UniteUp</b></h2>
+		</li>
+		</ul>
+		<br>
+  &nbsp;&nbsp;  
+   <ul class="nav navbar-nav">
+      <li><a href="#home">Home</a></li>
+      
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Blogs <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#blog" data-ng-hide="blog.userid==globals.currentUser.username">Create Blog</a></li>
+          <li><a href="#viewblog">View Blogs</a></li>
+        </ul>
+      </li>
+      
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Jobs <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li data-ng-show="currentUser.role=='Admin'"><a href="#jobs">Create Job</a></li>
+            <li data-ng-show="currentUser.role=='Student'"><a href="#applyjob">Apply Jobs</a></li>
+            <li data-ng-show="currentUser.role=='Admin'"><a href="#jobslist">View Jobs</a></li>
+        </ul>
+      </li>
+      
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Forums <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#forum" data-ng-hide="forum.userid==globals.currentUser.username">Create Forum</a></li>
+            <li><a href="#viewforum">View Forums</a></li>
+        </ul>
+      </li>
+      
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Events <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#event" data-ng-show="currentUser.role=='Admin'">Create Event</a></li>
+            <li><a href="#viewevent">View Events</a></li>
+        </ul>
+      </li>
+      
+    </ul>
+    
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#register" data-ng-hide="globals.currentUser.islogged"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="#login" data-ng-hide="globals.currentUser.islogged"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+   
+   <li style="padding-top:20px;"  data-ng-show="globals.currentUser.islogged">
+          <p	style="color: white";>Welcome:{{globals.currentUser.username}}</p>
+        </li>
+			
+        <li data-ng-hide="currentUser.role=='Admin'">
+        	<a href="#users" data-ng-show="globals.currentUser.islogged">Find Friends</a>
+        </li>
+        <li data-ng-hide="currentUser.role=='Admin'">
+        	<a href="#chat" data-ng-show="globals.currentUser.islogged">Chat</a>
+         </li>
+						
+        <li data-ng-show="globals.currentUser.islogged"><a
+						href="#myprofile">My Profile</a></li>
+        <li><a href="" data-ng-show="globals.currentUser.islogged"
+						data-ng-click="vm.logout()"><i
+							class="glyphicon glyphicon-log-out"></i>Logout</a></li>
+      </ul>
+       
+      </div>
+</nav>
+
+------------------------------------- Navbar Ending --------------------------------
+
+<div data-ng-view></div>
+</body>
+<script type="text/javascript">
+$('ul.nav li.dropdown').hover(function()
+		
+		{
+		$(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(500);
+		},
+		
+		function()
+		{
+			$(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
+		}
+		);
+</script>
+</html>
+ -->
